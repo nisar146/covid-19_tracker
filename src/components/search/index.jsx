@@ -42,7 +42,7 @@ const Search = (props) => {
         setShowGlobal={setShowGlobal}
         setCountryData={setCountryData}
         clearAllData={() => clearAllData(setCountryData, setInputValue)}
-        inputValue={countryData.countryData.Country}
+        inputValue={countryData.countryData && countryData.countryData.Country}
         />
       ) : (
           <SearchResult
