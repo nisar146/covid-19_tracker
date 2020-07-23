@@ -1,3 +1,9 @@
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+html {
+  font-family: "Lucida Sans", sans-serif;
+}
+
 .App {
   text-align: center;
 }
@@ -34,5 +40,109 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+.custom-padding {
+  min-height: 100vh;
+  height: 100%;
+  margin-top: 50px;
+}
+
+.close-white {
+  color: white
+}
+
+.search {
+  padding: 20px;
+  width: 102%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.display-card {
+  color: black;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.total-confirmed {
+  border: 5px solid #41a7ff;
+  /* background: #41a7ff; */
+  /* color: white; */
+}
+
+.total-recovered {
+  border: 5px solid yellowgreen;
+  /* background: yellowgreen; */
+  /* color: white; */
+}
+
+.total-deaths {
+  border: 5px solid red;
+  /* background: red; */
+  /* color: white; */
+}
+
+.new-confirmed {
+  border: 5px solid #d83f3f;
+}
+
+.new-deaths{
+  border: 5px solid #ff0053;
+}
+
+.new-recovered {
+  border: 5px solid #ffa501;
+}
+
+.card-body {
+  padding: 10px;
+}
+
+.search-result {
+  padding: 20px;
+  display: block;
+  justify-content: center;
+  margin-left: 13%;
+  width: 70%;
+}
+
+/* For mobile phones: */
+[class*="col-"] {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  /* For desktop: */
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+}
+
+@media (min-width: 1200px) {
+  .search {
+    padding: 20px;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 160px;
+    display: flex;
+  }
+
+  .search-result {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
   }
 }
