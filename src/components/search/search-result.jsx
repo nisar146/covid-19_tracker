@@ -1,7 +1,6 @@
 import React from 'react';
 
 const SearchResult = (props) => {
-  console.log(props.inputValue);
   const countryData = props.countryData;
   const message = props.flag ? `Covid-19 Cases in ${countryData && countryData.Country}` : 'Global Covid-19 Cases';
   const buttonName = props.flag ? `Show Global` : `Show ${props.inputValue && props.inputValue}`;
@@ -9,7 +8,8 @@ const SearchResult = (props) => {
     <div>
       {countryData &&
         <div>
-          <button type="button" className="btn btn-primary mt-2" onClick={() => props.setShowGlobal(!(props.showGlobal))}>{buttonName}</button>
+          {buttonName === "Show undefined" && (<span className="undefined">Please enter a valid country name.</span>)}
+          {buttonName !== "Show undefined" && (<button type="button" className="btn btn-primary mt-2" onClick={() => props.setShowGlobal(!(props.showGlobal))}>{buttonName}</button>)}
           <span className="pl-5" />
           <button type="button" className="btn btn-primary mt-2" onClick={() => props.clearAllData()}>Clear</button>
           <p className="mt-4">{message}</p>

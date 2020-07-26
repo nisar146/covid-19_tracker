@@ -5,10 +5,11 @@ import SearchResult from './search-result';
 
 const onsubmit = (data, setCountryData, setFlag) => {
   setFlag(true);
+  const name = data.countryName.trim();
   const object = {};
   axios.get('https://api.covid19api.com/summary').then(res => {
     object.Global = res && (res.data.Global)
-    object.countryData = res && (res.data.Countries).find(v => v.Country.toLowerCase() === data.countryName.toLowerCase())
+    object.countryData = res && (res.data.Countries).find(v => v.Country.toLowerCase() === name.toLowerCase())
     setCountryData(object)
     setFlag(false);
   })
